@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{currentPage.title}}{% endblock %}
+
+{% block body %}
+
+<div class="h-screen flex flex-col w-full gap-5 mt-10">
+    <div class="flex items-center justify-center w-full">
+        <div class="w-full text-center">
+            <input type="text" id="mcisme-title" class="w-[32rem] border-black rounded text-xl px-3 py-2 bg-transparent border-2" id="page-title" placeholder="Sans Title" value="{{currentPage.title}}">
+            <button id="mcisme-saver">
+                <div class="flex h-6 w-6 items-center justify-center rounded-md text-slate-400 shadow-sm ring-1 ring-slate-900/5 hover:opacity-100 opacity-50 hover:shadow hover:ring-slate-900/10 dark:bg-slate-700 dark:text-slate-300 dark:shadow-none dark:ring-0"><svg width="12" height="12" fill="none" aria-hidden="true"><path d="M3.75 1v10M8.25 1v10M1 3.75h10M1 8.25h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg></div>
+            </button>
+        </div>
+    </div>
+    <div class="flex w-full">
+        <div class="w-full">
+            <div id="mcisme"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

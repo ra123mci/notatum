@@ -1,0 +1,9 @@
+/* Importation des classes Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* ... */
+
+.sf-toolbar {
+    @apply hidden;
+}

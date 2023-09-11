@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion!{% endblock %}
+
+{% block body %}
+    <div class="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">
+        <h2 class="text-2xl font-semibold mb-6">Connexion</h2>
+        <form action="#" method="POST">
+            {% if error %}
+                <div class="mb-4 text-red-500">
+                    {{ error.messageKey|trans(error.messageData, 'security') }}
+                </div>
+            {% endif %}
+            <div class="mb-4">
+                <label for="username" class="block text-gray-600 font-medium">Nom d'utilisateur</label>
+                <input type="text" id="username" name="_username" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500" placeholder="Entrez votre nom d'utilisateur" required>
+            </div>
+            <div class="mb-4">
+                <label for="password" class="block text-gray-600 font-medium">Mot de passe</label>
+                <input type="password" id="password" name="_password" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500" placeholder="Entrez votre mot de passe" required>
+            </div>
+            <div class="mb-4 flex justify-between">
+                <div class="w-full flex items-center gap-3">
+                    <input type="checkbox" id="remember_me" name="_remeber_me">
+                    <label for="remember_me" class="block text-gray-600 font-medium">Se souvenir de moi</label>
+                </div>
+                <a href="{{path('app_register')}}" class="text-blue-500 hover:text-blue-700 transition-colors duration-300">S'inscrire</a>
+            </div>
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+            <div class="flex justify-center">
+                <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Connexion</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

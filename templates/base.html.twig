@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %} | Notatum</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+        
+            {% if is_granted('IS_AUTHENTIFICATED_FULLY') %}
+            
+            {% endif %}
+
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+
+{# text-gray-400 bg-gray-900 #}
+{# text-indigo-300 bg-indigo-900 #}
+
+    <body class="flex h-screen space-x-6">
+        
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <!-- Sidebar Start -->
+        <div class="flex flex-col items-center h-full overflow-hidden text-gray-700 bg-gray-100 rounded-r">
+            <a class="flex items-center w-full px-3 mt-3" href="#">
+                <svg class="w-8 h-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z" />
+                </svg>
+                <span class="ml-2 text-xl font-bold">Notatum</span>
+            </a>
+            <form class="flex items-center w-full h-12 px-3 mt-2 bg-gray-300" href="#">
+                <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <input type="search" name="query" class="ml-2 text-sm font-medium p-2 w-full h-full bg-transparent" placeholder="Search" />
+            </form>
+            <div class="w-full px-2">
+                <div class="flex flex-col items-center w-full mt-3 border-t border-gray-300">
+                    <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-400/50" href="#">
+                        <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                        <span class="ml-2 text-sm font-medium w-64">Espace de Travail</span>
+                    </a>
+                    <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-400/50" href="#">
+                        <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                        </svg>
+                        <span class="ml-2 text-sm font-medium w-64">Mes Notes</span>
+                    </a>
+                    <a class="flex items-center w-full h-12 px-3 mt-2 hover:bg-gray-400/50 rounded" href="#">
+                        <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <span class="ml-2 text-sm font-medium w-64">Contributions</span>
+                    </a>
+                    <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-400/50" href="#">
+                        <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+                        </svg>
+                        <span class="ml-2 text-sm font-medium w-64">Documentations</span>
+                    </a>
+                </div>
+                <div class="flex flex-col items-center w-full mt-2 border-t pt-2 border-gray-300">
+                    <div class="flex w-full justify-between items-center">
+                        <a class="flex items-center dropdown" href="" data-dropdown="app-page-list-notes" data-dropdown-visible>
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.29571 15.3171C7.48307 15.5034 7.73652 15.6079 8.00071 15.6079C8.26489 15.6079 8.51834 15.5034 8.70571 15.3171L12.2957 11.7771L15.8357 15.3171C16.0231 15.5034 16.2765 15.6079 16.5407 15.6079C16.8049 15.6079 17.0583 15.5034 17.2457 15.3171C17.3394 15.2242 17.4138 15.1136 17.4646 14.9917C17.5154 14.8698 17.5415 14.7391 17.5415 14.6071C17.5415 14.4751 17.5154 14.3444 17.4646 14.2225C17.4138 14.1007 17.3394 13.9901 17.2457 13.8971L13.0057 9.65712C12.9127 9.56339 12.8021 9.48899 12.6803 9.43823C12.5584 9.38746 12.4277 9.36132 12.2957 9.36132C12.1637 9.36132 12.033 9.38746 11.9111 9.43823C11.7893 9.48899 11.6787 9.56339 11.5857 9.65712L7.29571 13.8971C7.20198 13.9901 7.12758 14.1007 7.07681 14.2225C7.02605 14.3444 6.99991 14.4751 6.99991 14.6071C6.99991 14.7391 7.02605 14.8698 7.07681 14.9917C7.12758 15.1136 7.20198 15.2242 7.29571 15.3171Z"></path>
+                            </svg>
+                            <span class="ml-2 text font-bold full">Notes</span>
+                        </a>
+                        <a class="p-2 rounded hover:bg-gray-400/50" href="#" id="mcisme-create">+</a>
+                    </div>
+                    <div id="app-page-list-notes" class="w-full">
+                        <ul class="py-2 w-full pl-8 gap-1 bg-gray-200 pr-4 flex flex-col justify-arround">
+                            {% for page in pages %}    
+                                <li>
+                                    <a 
+                                        data-anchor="page"
+                                        data-id="{{page.id}}"
+                                        class="flex items-center w-full p-1 rounded {% if page.id == currentPage.id %}bg-gray-300{% else %}hover:bg-gray-400/50{% endif %}" 
+                                        href="{{path('app_page', {'id': page.id})}}#">
+                                        <span class="ml-2" data-anchor-title="page">{{page.title}}</span>
+                                    </a>
+                                </li>
+                                
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center justify-between w-full h-16 mt-auto bg-gray-200 hover:bg-gray-400/50 p-5" href="#">
+                <a class="text-sm font-medium flex items-center gap-1">
+                    <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Mon Compte
+                </a>
+                <a href="{{path('app_logout')}}" class="p-3 rounded hover:text-red-700 hover:bg-gray-900/10">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                </a>
+            </div>
+        </div>
+        <!-- Sidebar End  -->
+        {% endif %}
+
+        <!-- Page Start  -->
+        <div class="w-full h-full overflow-y-scroll">
+            {% block body %}{% endblock %}
+        </div>
+        <!-- Page End  -->
+
+        <div class="rounded hidden fixed w-40 cursor-context-menu z-[9999] flex-col bg-gray-100 shadow-xl" id="mcisme-contextmenu">
+            <button class="relative block py-1 px-3 my-1 border w-full border-gray-100/50" data-context-menu="delete">Supprimer</button>
+        </div>
+         
+    </body>
+</html>
